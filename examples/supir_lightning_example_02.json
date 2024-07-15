@@ -1,5 +1,5 @@
 {
-  "last_node_id": 22,
+  "last_node_id": 23,
   "last_link_id": 46,
   "nodes": [
     {
@@ -124,7 +124,7 @@
       "flags": {
         "collapsed": true
       },
-      "order": 5,
+      "order": 6,
       "mode": 0,
       "inputs": [
         {
@@ -149,62 +149,6 @@
       ],
       "color": "#2a363b",
       "bgcolor": "#3f5159"
-    },
-    {
-      "id": 13,
-      "type": "ImageResize+",
-      "pos": [
-        348,
-        238
-      ],
-      "size": {
-        "0": 315,
-        "1": 218
-      },
-      "flags": {},
-      "order": 4,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "link": 24
-        }
-      ],
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            25
-          ],
-          "shape": 3,
-          "slot_index": 0
-        },
-        {
-          "name": "width",
-          "type": "INT",
-          "links": null,
-          "shape": 3
-        },
-        {
-          "name": "height",
-          "type": "INT",
-          "links": null,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "ImageResize+"
-      },
-      "widgets_values": [
-        1536,
-        1536,
-        "lanczos",
-        false,
-        "always",
-        0
-      ]
     },
     {
       "id": 16,
@@ -334,47 +278,6 @@
         "high quality, detailed, photograph of an old man",
         "bad quality, blurry, messy",
         ""
-      ]
-    },
-    {
-      "id": 2,
-      "type": "LoadImage",
-      "pos": [
-        -151,
-        127
-      ],
-      "size": {
-        "0": 441.6546630859375,
-        "1": 571.2802734375
-      },
-      "flags": {},
-      "order": 2,
-      "mode": 0,
-      "outputs": [
-        {
-          "name": "IMAGE",
-          "type": "IMAGE",
-          "links": [
-            24,
-            28,
-            33
-          ],
-          "shape": 3,
-          "slot_index": 0
-        },
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "links": null,
-          "shape": 3
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "LoadImage"
-      },
-      "widgets_values": [
-        "oldman.jpg",
-        "image"
       ]
     },
     {
@@ -511,8 +414,16 @@
       },
       "widgets_values": [
         [
-          "/view?filename=rgthree.compare._temp_njjbe_00005_.png&type=temp&subfolder=&rand=0.6134253127223597",
-          "/view?filename=rgthree.compare._temp_njjbe_00006_.png&type=temp&subfolder=&rand=0.04342496184608513"
+          {
+            "url": "/view?filename=rgthree.compare._temp_njjbe_00005_.png&type=temp&subfolder=&rand=0.6134253127223597",
+            "name": "A",
+            "selected": true
+          },
+          {
+            "url": "/view?filename=rgthree.compare._temp_njjbe_00006_.png&type=temp&subfolder=&rand=0.04342496184608513",
+            "name": "B",
+            "selected": true
+          }
         ]
       ]
     },
@@ -525,10 +436,10 @@
       ],
       "size": {
         "0": 412.73406982421875,
-        "1": 146
+        "1": 170
       },
       "flags": {},
-      "order": 6,
+      "order": 4,
       "mode": 0,
       "inputs": [
         {
@@ -574,7 +485,8 @@
       "widgets_values": [
         "SUPIR-v0F.ckpt",
         false,
-        "auto"
+        "auto",
+        false
       ]
     },
     {
@@ -760,12 +672,12 @@
         -643,
         -137
       ],
-      "size": [
-        529.3913012695314,
-        98
-      ],
+      "size": {
+        "0": 529.3912963867188,
+        "1": 98
+      },
       "flags": {},
-      "order": 3,
+      "order": 2,
       "mode": 0,
       "outputs": [
         {
@@ -799,7 +711,104 @@
         "Node name for S&R": "CheckpointLoaderSimple"
       },
       "widgets_values": [
-        "SDXL/Juggernaut_RunDiffusionPhoto2_Lightning_4Steps.safetensors"
+        "Juggernaut-XL_v9_RunDiffusionPhoto_v2.safetensors"
+      ]
+    },
+    {
+      "id": 2,
+      "type": "LoadImage",
+      "pos": [
+        -151,
+        127
+      ],
+      "size": {
+        "0": 441.6546630859375,
+        "1": 571.2802734375
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            24,
+            28,
+            33
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "example.png",
+        "image"
+      ]
+    },
+    {
+      "id": 13,
+      "type": "ImageResize+",
+      "pos": [
+        354,
+        261
+      ],
+      "size": {
+        "0": 315,
+        "1": 218
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 24
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            25
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageResize+"
+      },
+      "widgets_values": [
+        1536,
+        1536,
+        "lanczos",
+        "keep proportion",
+        "always",
+        0
       ]
     }
   ],
@@ -999,6 +1008,14 @@
   ],
   "groups": [],
   "config": {},
-  "extra": {},
+  "extra": {
+    "ds": {
+      "scale": 0.5644739300537778,
+      "offset": [
+        1327.4638952656235,
+        371.96733307031195
+      ]
+    }
+  },
   "version": 0.4
 }
